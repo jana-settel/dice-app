@@ -7,18 +7,35 @@ void main() {
       home: Scaffold(
         backgroundColor: Colors.red,
         appBar: AppBar(
-          title: Text('Dicee'),
+          title: const Text('Dicee'),
           backgroundColor: Colors.red,
         ),
-        body: DicePage(),
+        body: const DicePage(),
       ),
     ),
   );
 }
 
 class DicePage extends StatelessWidget {
+  const DicePage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    var leftDiceNumber = 3;
+    return Center(
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: TextButton(
+                onPressed: () {},
+                child: Image.asset('images/dice$leftDiceNumber.png')),
+          ),
+          Expanded(
+            child: TextButton(
+                onPressed: () {}, child: Image.asset('images/dice1.png')),
+          ),
+        ],
+      ),
+    );
   }
 }
